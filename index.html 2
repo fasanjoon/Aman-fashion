@@ -1,0 +1,82 @@
+<!DOCTYPE html><html lang="hi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aman Fashion</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: sans-serif;
+      background-color: #f8f8f8;
+      color: #333;
+      text-align: center;
+    }
+    header {
+      background-color: #f44336;
+      color: white;
+      padding: 20px;
+      font-size: 24px;
+    }
+    p.description {
+      font-size: 18px;
+      margin: 10px 20px;
+    }
+    .photo-section {
+      margin: 20px;
+    }
+    .photo-section input {
+      margin: 10px 0;
+    }
+    .photo-gallery img {
+      max-width: 90%;
+      height: auto;
+      margin: 10px auto;
+      display: block;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    .buttons {
+      margin: 30px 0;
+    }
+    .btn {
+      display: inline-block;
+      padding: 15px 25px;
+      margin: 10px;
+      background-color: #25D366;
+      color: white;
+      text-decoration: none;
+      border-radius: 30px;
+      font-size: 18px;
+    }
+    .btn.youtube {
+      background-color: #FF0000;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    Aman Fashion
+  </header>  <p class="description">Redymade कपड़ों का भरोसेमंद ऑनलाइन बाजार
+  <div class="photo-section">
+    <input type="file" accept="image/*" onchange="previewImage(event)" />
+    <div class="photo-gallery" id="gallery"></div>
+  </div>  <div class="buttons">
+    <a class="btn" href="https://wa.me/917454877824" target="_blank">WhatsApp पर ऑर्डर करें</a>
+    <a class="btn youtube" href="https://www.youtube.com/@user-dq3qr6ms9r" target="_blank">YouTube Channel</a>
+  </div>  <script>
+    function previewImage(event) {
+      const gallery = document.getElementById('gallery');
+      gallery.innerHTML = '';
+      const file = event.target.files[0];
+      if (file) {
+        const reader = new FileReader();
+        reader.onload = function (e) {
+          const img = document.createElement('img');
+          img.src = e.target.result;
+          gallery.appendChild(img);
+        }
+        reader.readAsDataURL(file);
+      }
+    }
+  </script></body>
+</html>
